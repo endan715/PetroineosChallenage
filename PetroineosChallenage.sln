@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetroineosChallenage", "PetroineosChallenage\PetroineosChallenage.csproj", "{ABA6F1E3-A861-44F4-9564-0A6CCDECC7EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetroineosChallenage.Tests", "PetroineosChallenage.Tests\PetroineosChallenage.Tests.csproj", "{24432F50-3395-4B69-BA35-BE80E6F4701E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABA6F1E3-A861-44F4-9564-0A6CCDECC7EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA6F1E3-A861-44F4-9564-0A6CCDECC7EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA6F1E3-A861-44F4-9564-0A6CCDECC7EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA6F1E3-A861-44F4-9564-0A6CCDECC7EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24432F50-3395-4B69-BA35-BE80E6F4701E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24432F50-3395-4B69-BA35-BE80E6F4701E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24432F50-3395-4B69-BA35-BE80E6F4701E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24432F50-3395-4B69-BA35-BE80E6F4701E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85152976-9DD8-492D-ADE2-DA83462329BC}
+	EndGlobalSection
+EndGlobal
