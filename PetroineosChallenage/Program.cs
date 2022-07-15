@@ -21,9 +21,11 @@ IHost host = Host.CreateDefaultBuilder(args)
         var outputSettings = GetAppSettings<OutputSettings>(config, OutputSettings.SettingSectionName);
         var retrySettings = GetAppSettings<RetrySettings>(config, RetrySettings.SettingSectionName);
         var workerSettings = GetAppSettings<WorkerSettings>(config, WorkerSettings.SettingSectionName);
+        var aggregatorSettings = GetAppSettings<AggregatorSettings>(config, AggregatorSettings.SettingSectionName);
         services.AddSingleton(outputSettings);
         services.AddSingleton(retrySettings);
         services.AddSingleton(workerSettings);
+        services.AddSingleton(aggregatorSettings);
         services.AddSingleton<IDataWriter, CSVDataWriter>();
         services.AddSingleton<IRetryPolicy, RetryPolicy>();
         services.AddSingleton<IPowerService, PowerService>();

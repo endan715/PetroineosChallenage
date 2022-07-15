@@ -1,4 +1,5 @@
-﻿using Services;
+﻿using PetroineosChallenage.Settings;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,13 @@ namespace PetroineosChallenage
 {
     public class TradePositionAggregator : ITradePositionAggregator
     {
+        private readonly AggregatorSettings _aggregatorSettings;
+
+        public TradePositionAggregator(AggregatorSettings aggregatorSettings)
+        {
+            _aggregatorSettings = aggregatorSettings;
+        }
+        
         public IReadOnlyList<HourlyTradePosition> GetAggregatedTradePositions(IEnumerable<PowerTrade> trades)
         {
             var allPeriods = trades.SelectMany(trade => trade.Periods);
@@ -17,9 +25,11 @@ namespace PetroineosChallenage
 
         private string ConvertPeriodToLocalTime(int period)
         {
-            var hour = (period - 2);
+            int diffBetweenStartHourAndActualHour = _aggregatorSettings.StartHour - 25;
+            
+            var hour = (period + diffBetweenStartHourAndActualHour);
 
-            if (period == 1)
+            if (period <= 24 - _aggregatorSettings.StartHour)
             {
                 hour = 24 + hour;
             }

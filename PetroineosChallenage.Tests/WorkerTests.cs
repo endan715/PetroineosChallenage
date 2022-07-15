@@ -20,6 +20,8 @@ namespace PetroineosChallenage.Tests
         {
             var workerSettings = new WorkerSettings { Interval = 0.05 }; // 3 seconds
             var outputSettings = new OutputSettings { Location = "C:\\Temp" };
+            var aggregatorSettings = new AggregatorSettings { StartHour = 23 };
+
             var workerLoggerMock = new Mock<ILogger<Worker>>();
             var powerServiceMock = new Mock<IPowerService>();
             var aggregatorMock = new Mock<ITradePositionAggregator>();
@@ -30,6 +32,7 @@ namespace PetroineosChallenage.Tests
             services.AddSingleton<IHostedService, Worker>();
             services.AddSingleton<ILogger<Worker>>(workerLoggerMock.Object);
             services.AddSingleton(outputSettings);
+            services.AddSingleton(aggregatorSettings);
             services.AddSingleton(retryPolicyMock.Object);
             services.AddSingleton(workerSettings);
             services.AddSingleton(dataWriterMock.Object);

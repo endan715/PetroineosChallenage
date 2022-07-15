@@ -1,3 +1,4 @@
+using PetroineosChallenage.Settings;
 using Services;
 
 namespace PetroineosChallenage.Tests
@@ -19,7 +20,9 @@ namespace PetroineosChallenage.Tests
             tradeA.Periods[2].Volume = 0;
             tradeB.Periods[2].Volume = 0;
 
-            ITradePositionAggregator aggretator = new TradePositionAggregator();
+
+            var aggregatorSettings = new AggregatorSettings { StartHour = 23 };
+            ITradePositionAggregator aggretator = new TradePositionAggregator(aggregatorSettings);
             var positions = aggretator.GetAggregatedTradePositions(new List<PowerTrade> { tradeA, tradeB});
 
             Assert.Equal("23:00", positions[0].LocalTimeString);
